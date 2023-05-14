@@ -1,0 +1,20 @@
+{
+  "name": "bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "nodemon --config nodemon.json src/index.ts",
+    "start": "node .",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "Aristos Xanthus",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.1.4",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}
