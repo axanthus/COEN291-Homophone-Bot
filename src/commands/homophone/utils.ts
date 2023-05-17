@@ -18,7 +18,7 @@ export const formatResponse = (homophones: any) => {
 
 export const formatSSML = (homophones: any, language: Language) => {
 
-  const voiceName = language === 'Spanish' ? 'es-ES-Wavenet-B' : "fr-FR-Neural2-E"
+  const voiceName = language === 'Spanish' ? 'es-ES-Neural2-A' : language === "Chinese" ? "yue-HK-Standard-B" : "fr-FR-Neural2-E"
 
   const wordBlock = (voiceName: VoiceName, language: Language, eWord: string, fWord: string) => `
         How to say the word "${eWord}" in ${language}: <break time="1000ms"/> 

@@ -15,13 +15,16 @@ export async function get_homophones(options: Options) {
     role: ChatCompletionRequestMessageRoleEnum.User,
     content: prompt3,
   }]
-
-  const response = await openai.createChatCompletion({
-    model: "gpt-3.5-turbo",
-    messages: message,
-    temperature: 0.1,
-    max_tokens: 70,
-  });
-
-  return JSON.parse(response.data.choices[0].message!.content)
+  try {
+    const response = await openai.createChatCompletion({
+      model: "gpt-3.5-turbo",
+      messages: message,
+      temperature: 0,
+      max_tokens: 70, 
+    });
+    return JSON.parse(response.data.choices[0].message!.content)
+  } catch (error) {
+    console.log(error)
+    return null
+  }  
 }

@@ -20,7 +20,7 @@ const meta = new SlashCommandBuilder()
     option
       .setName('language')
       .setDescription('Select a language to find homophones for')
-      .setChoices({ name: 'Spanish', value: 'Spanish'}, {name: 'French', value: 'French'})
+      .setChoices({ name: 'Spanish', value: 'Spanish'}, {name: 'French', value: 'French'}, {name: 'Chinese', value: 'Chinese'})
       .setMinLength(1)
       .setMaxLength(15)
       .setRequired(true)
@@ -40,8 +40,9 @@ export default command(meta, async ({ interaction }) => {
     language: interaction.options.getString('language')! as Language,
     quantity: interaction.options.getInteger('quantity')!
   }
-  await interaction.deferReply({ephemeral: true})
+  await interaction.deferReply({ ephemeral: false })
   const homophones = await get_homophones(options)
+  console.log(homophones)
   const audioFilePath = await createNarration(homophones, options.language)
   
   const res = formatResponse(homophones)
