@@ -106,5 +106,12 @@
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
-  "include": ["./src/index.ts"]
+  "include": ["./src/index.ts"],
+  "ts-node": {
+    // "esm": true, //this wasn't a problem before, but now is.
+    "transpileOnly": true,
+    "logError": true,
+    "pretty": true,
+    // "experimentalResolver": true,
+  },
 }
