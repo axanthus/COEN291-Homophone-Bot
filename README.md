@@ -4,6 +4,16 @@
 ```
 npm install
 ```
+### Discord API
+You will need to: 
+* create a bot app on discord
+* create an api token and add it to your .env
+
+### Open AI ChatGPT
+You will need to:
+* Make an account
+* create an api token and add it to your .env
+
 ### Google Cloud CLI
 Download the Google Cloud CLI, then run:
 ```
