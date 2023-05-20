@@ -18,7 +18,25 @@ export const formatResponse = (homophones: any) => {
 
 export const formatSSML = (homophones: any, language: Language) => {
 
-  const voiceName = language === 'Spanish' ? 'es-ES-Neural2-A' : language === "Chinese" ? "yue-HK-Standard-B" : "fr-FR-Neural2-E"
+  let voiceName: VoiceName
+
+  switch (language) {
+    case 'Spanish':
+      voiceName = 'es-ES-Standard-A'
+      break;
+    case 'French':
+      voiceName = 'fr-FR-Standard-C'
+      break;
+    case 'Chinese':
+      voiceName = 'yue-HK-Standard-B'
+      break;
+    case 'Greek':
+      voiceName = 'el-GR-Standard-A'
+      break;
+    default:
+      voiceName = 'en-US-News-M'
+      break;
+  }
 
   const wordBlock = (voiceName: VoiceName, language: Language, eWord: string, fWord: string) => `
         How to say the word "${eWord}" in ${language}: <break time="1000ms"/> 

@@ -38,7 +38,7 @@ export async function createNarration(homophones:any, language: Language) { //cr
   const request = {
     input: {ssml: ssmlText},
     // Select the language and SSML voice gender (optional)
-    voice: { languageCode: 'en-US', name:'en-US-Neural2-J', ssmlGender: 'MALE'},
+    voice: { languageCode: 'en-US', name:'en-US-News-M', ssmlGender: 'MALE'},
     // select the type of audio encoding
     audioConfig: {audioEncoding: 'MP3'},
   };

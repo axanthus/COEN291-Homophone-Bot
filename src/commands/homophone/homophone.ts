@@ -20,7 +20,7 @@ const meta = new SlashCommandBuilder()
     option
       .setName('language')
       .setDescription('Select a language to find homophones for')
-      .setChoices({ name: 'Spanish', value: 'Spanish'}, {name: 'French', value: 'French'}, {name: 'Chinese', value: 'Chinese'})
+      .setChoices({ name: 'Spanish', value: 'Spanish'}, {name: 'French', value: 'French'}, {name: 'Chinese', value: 'Chinese'}, { name: 'Greek', value: 'Greek'})
       .setMinLength(1)
       .setMaxLength(15)
       .setRequired(true)
